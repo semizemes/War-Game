@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
     <title>War</title>
-</head>
-<body>
-    <button id="new-deck">New Deck, Please!</button>
+  </head>
+  <body>
+    <div class="head">
+      <button class="new-deck-btn btn" id="new-deck">Shuffle Deck</button>
+      <p class="remaining">Remaining Cards: </p>
+    </div>
+    <h1>War!</h1>
+    <p>Computer</p>
+    <div class="cards" id="cards">
+        <div></div>
+        <div></div>
+    </div>
+    <p>Me</p>
+    <button class="draw-cards-btn btn" id="draw-cards">Draw</button>
     <script src="./index.js"></script>
-</body>
+  </body>
 </html>
