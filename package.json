@@ -1,6 +1,6 @@
 {
   "name": "War-Game",
-  "description": "",
+  "description": "A card game built with vanilla JavaScript and async/await. Players draw cards against the computer using the Deck of Cards API. Features promises, callbacks, API integration, and dynamic DOM manipulation with real-time score tracking.",
   "scripts": {
     "start": "vite",
     "dev": "vite",
