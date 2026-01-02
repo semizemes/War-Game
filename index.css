@@ -31,17 +31,17 @@ h1 {
     text-align: center;
 }
 
-.cards * {
+.card-slot {
     display: block;
     margin: 10px auto;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 10.9rem;
+    height: 15.32rem;
 }
 
 img {
     height: 35vh;
-    border: 1px solid black;
-    border-radius: 5px;
-    width: 11.1rem;
-    height: 15.32rem;
 }
 
 .btn {
