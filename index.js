@@ -2,8 +2,9 @@ let deckId;
 const cardsContainer = document.getElementById("cards");
 const score = document.getElementById("score");
 const remainingText = document.getElementById("remaining");
-let computerScore = 0
-let myScore = 0
+const newDeck = document.getElementById("new-deck");
+let computerScore = 0;
+let myScore = 0;
 
 function handleClick() {
   fetch("https://apis.scrimba.com/deckofcards/api/deck/new/shuffle/")
@@ -15,7 +16,7 @@ function handleClick() {
 }
 handleClick();
 
-document.getElementById("new-deck").addEventListener("click", handleClick);
+newDeck.addEventListener("click", handleClick);
 document.getElementById("draw-cards").addEventListener("click", (e) => {
   const currentEl = e.currentTarget;
   fetch(`https://apis.scrimba.com/deckofcards/api/deck/${deckId}/draw/?count=2`)
@@ -29,10 +30,19 @@ document.getElementById("draw-cards").addEventListener("click", (e) => {
         data.cards[1].value
       );
       score.innerHTML = winnerText;
-      document.getElementById("computer-score").textContent = `Computer: ${computerScore}`
-      document.getElementById("my-score").textContent = `Me: ${myScore}`
       if (data.remaining == 0) {
         currentEl.disabled = true;
+
+        if (computerScore > myScore) {
+          score.textContent = "The computer won the game!";
+        } else if (computerScore < myScore) {
+          score.textContent = "You won the game!";
+        } else {
+          score.textContent = "It's a tie game!";
+        }
+        newDeck.addEventListener("click", () => {
+          window.location.reload();
+        });
       }
     });
 });
@@ -61,11 +71,15 @@ function determineCardWinner(card1, card2) {
     return "War!";
   }
   if (card1ValueIndex > card2ValueIndex) {
-    computerScore++
+    computerScore++;
+    document.getElementById(
+      "computer-score"
+    ).textContent = `Computer: ${computerScore}`;
     return "Computer wins";
   }
   if (card1ValueIndex < card2ValueIndex) {
-    myScore++
+    myScore++;
+    document.getElementById("my-score").textContent = `Me: ${myScore}`;
     return "You win";
   }
 }
