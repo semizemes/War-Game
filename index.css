@@ -57,6 +57,10 @@ img {
     padding: 0.7rem 0;
 }
 
+.draw-cards-btn:disabled{
+    cursor: not-allowed;
+}
+
 .draw-cards-btn,
 .new-deck-btn {
     background-color: yellow;

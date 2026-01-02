@@ -4,20 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./index.css" />
-    <title>War</title>
+    <title>Game of War!</title>
   </head>
   <body>
     <div class="head">
       <button class="new-deck-btn btn" id="new-deck">Shuffle Deck</button>
-      <p class="remaining">Remaining Cards: </p>
+      <p class="remaining" id="remaining"></p>
     </div>
-    <h1 id="score">War!</h1>
-    <p>Computer</p>
+    <h1 id="score">Game of War!</h1>
+    <p id="computer-score">Computer: 0</p>
     <div class="cards" id="cards">
-        <div class="card-slot"></div>
-        <div class="card-slot"></div>
+      <div class="card-slot"></div>
+      <div class="card-slot"></div>
     </div>
-    <p>Me</p>
+    <p id="my-score">Me: 0</p>
     <button class="draw-cards-btn btn" id="draw-cards">Draw</button>
     <script src="./index.js"></script>
   </body>
